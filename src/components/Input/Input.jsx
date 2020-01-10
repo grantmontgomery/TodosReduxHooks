@@ -20,6 +20,7 @@ const Input = () => {
       <button onClick={event => handleInput(addEx(input, event))}>
         Exclamation
       </button>
+      <button>Submit</button>
     </div>
   );
 };
