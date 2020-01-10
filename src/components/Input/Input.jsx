@@ -15,6 +15,18 @@ const Input = () => {
 
   const dispatch = useDispatch();
 
+  const handleSubmit = (
+    event,
+    dispatchParam,
+    inputParam,
+    actionParam,
+    hookParam
+  ) => {
+    event.preventDefault();
+    dispatchParam(actionParam({ value: inputParam, id: Math.random() }));
+    hookParam((inputParam = ""));
+  };
+
   return (
     <div className="input-wrapper">
       <input
@@ -26,7 +38,13 @@ const Input = () => {
       <button onClick={event => handleInput(addEx(input, event))}>
         Exclamation
       </button>
-      <button onClick={() => dispatch(addTodo(input))}>Submit</button>
+      <button
+        onClick={event =>
+          handleSubmit(event, dispatch, input, addTodo, handleInput)
+        }
+      >
+        Submit
+      </button>
     </div>
   );
 };

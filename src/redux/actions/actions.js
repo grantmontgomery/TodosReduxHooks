@@ -1,14 +1,14 @@
-const addTodo = input => {
+const addTodo = object => {
   return {
     type: "ADD",
-    payload: input
+    payload: { value: object.value, id: object.id }
   };
 };
 
-const removeTodo = todo => {
+const removeTodo = id => {
   return {
     type: "REMOVE",
-    payload: todo
+    payload: id
   };
 };
 

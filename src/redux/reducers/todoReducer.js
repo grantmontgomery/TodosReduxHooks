@@ -3,7 +3,7 @@ const todoReducer = (state = [], action) => {
     case "ADD":
       return [...state, action.payload];
     case "REMOVE":
-      return state.splice(state.indexOf(action.payload), 1);
+      return state.filter(todo => todo.id !== action.payload);
     default:
       return state;
   }
