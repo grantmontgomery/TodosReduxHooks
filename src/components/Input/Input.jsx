@@ -4,6 +4,11 @@ import "./Input.css";
 const Input = () => {
   let [input, handleInput] = useState("");
 
+  const addEx = (inputstate, event) => {
+    event.preventDefault();
+    return inputstate + "!";
+  };
+
   return (
     <div className="input-wrapper">
       <input
@@ -12,7 +17,9 @@ const Input = () => {
         onChange={event => handleInput((input = event.target.value))}
       />
       <button onClick={() => handleInput((input = ""))}>Reset</button>
-      <button>Submit</button>
+      <button onClick={event => handleInput(addEx(input, event))}>
+        Exclamation
+      </button>
     </div>
   );
 };
