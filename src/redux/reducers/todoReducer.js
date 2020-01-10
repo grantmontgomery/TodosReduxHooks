@@ -1,9 +1,9 @@
-const todoReducer = (state = [1, 2, 3], action) => {
+const todoReducer = (state = [], action) => {
   switch (action.type) {
     case "ADD":
-      return [...state, {}];
+      return [...state, action.payload];
     case "REMOVE":
-      return state.splice();
+      return state.splice(state.indexOf(action.payload), 1);
     default:
       return state;
   }

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Input.css";
+import { useDispatch } from "react-redux";
+import { actions } from "../../redux";
 
 const Input = () => {
   let [input, handleInput] = useState("");
@@ -8,6 +10,10 @@ const Input = () => {
     event.preventDefault();
     return inputstate + "!";
   };
+
+  const { addTodo } = actions;
+
+  const dispatch = useDispatch();
 
   return (
     <div className="input-wrapper">
@@ -20,7 +26,7 @@ const Input = () => {
       <button onClick={event => handleInput(addEx(input, event))}>
         Exclamation
       </button>
-      <button>Submit</button>
+      <button onClick={() => dispatch(addTodo(input))}>Submit</button>
     </div>
   );
 };

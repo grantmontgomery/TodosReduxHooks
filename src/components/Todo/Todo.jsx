@@ -1,8 +1,8 @@
 import React from "react";
 import "./Todo.css";
 
-const Todo = () => {
-  return <div className="todo-wrapper"></div>;
+const Todo = props => {
+  return <div className="todo-wrapper">{props.todo}</div>;
 };
 
 export default Todo;

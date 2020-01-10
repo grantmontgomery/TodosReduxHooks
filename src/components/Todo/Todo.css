@@ -1,1 +1,7 @@
-/* No CSS *//*# sourceMappingURL=Todo.css.map */
+.todo-wrapper {
+  height: 50px;
+  width: 100px;
+  margin-top: 5px;
+  border: solid 1px black;
+}
+/*# sourceMappingURL=Todo.css.map */
