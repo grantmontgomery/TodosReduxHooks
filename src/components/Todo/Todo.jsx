@@ -10,6 +10,8 @@ const Todo = props => {
 
   const { todo } = props;
 
+  todo.rendered = true;
+
   return (
     <div className="todo-wrapper">
       {todo.value}
